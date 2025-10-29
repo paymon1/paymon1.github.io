@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paymon1's Project Hub</title>
+    <title>مرکز پروژه‌های پیمان ۱</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Configure Tailwind for Inter font and basic styling -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        /* Note: For Farsi/Persian text, the browser will likely fall back to a suitable RTL font like Noto Sans Arabic or system UI font. */
         body {
             font-family: 'Inter', sans-serif;
             transition: background-color 0.3s, color 0.3s;
@@ -31,7 +32,7 @@
     </style>
 </head>
 
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
+<body dir="rtl" class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
 
     <!-- Main Container -->
     <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
@@ -39,10 +40,10 @@
         <!-- Header -->
         <header class="text-center mb-12 pt-8">
             <h1 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600 dark:from-indigo-400 dark:to-purple-500 mb-2">
-                Project One-Pagers Index
+                فهرست صفحات تک‌صفحه‌ای پروژه‌ها
             </h1>
             <p class="text-xl text-gray-600 dark:text-gray-400">
-                Quick access to all my GitHub Pages micro-applications.
+                دسترسی سریع به تمام میکرو-اپلیکیشن‌های GitHub Pages من.
             </p>
         </header>
 
@@ -50,17 +51,17 @@
         <div class="flex flex-col md:flex-row justify-between items-center mb-8 space-y-4 md:space-y-0">
             <!-- Search/Filter Tool -->
             <div class="w-full md:w-1/2">
-                <label for="search" class="sr-only">Search Projects</label>
-                <input type="text" id="search" oninput="filterLinks()" placeholder="Search projects (e.g., 'management', 'links')"
+                <label for="search" class="sr-only">جستجوی پروژه‌ها</label>
+                <input type="text" id="search" oninput="filterLinks()" placeholder="جستجوی پروژه‌ها (مثلاً: 'management', 'links')"
                        class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-xl shadow-lg focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-gray-100 transition duration-300">
             </div>
 
             <!-- Theme Toggle Tool -->
             <button id="theme-toggle" onclick="toggleTheme()"
-                    class="flex items-center space-x-2 p-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 border border-gray-200 dark:border-gray-700">
+                    class="flex items-center space-x-2 rtl:space-x-reverse p-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 border border-gray-200 dark:border-gray-700">
                 <!-- Icon will be updated by JS -->
                 <svg id="theme-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                <span id="theme-text" class="hidden sm:inline">Toggle Dark Mode</span>
+                <span id="theme-text" class="hidden sm:inline">فعال/غیرفعال‌سازی حالت تاریک</span>
             </button>
         </div>
 
@@ -71,14 +72,14 @@
 
         <!-- No Results Message -->
         <p id="no-results" class="text-center text-xl text-red-500 dark:text-red-400 mt-10 hidden">
-            No projects found matching your search term.
+            پروژه‌ای با عبارت جستجوی شما یافت نشد.
         </p>
 
     </div>
 
-    <!-- Toast Notification (for Copy action) -->
-    <div id="toast" class="fixed bottom-5 right-5 z-50 p-4 bg-green-500 text-white rounded-lg shadow-2xl transition-opacity duration-300 opacity-0 transform translate-y-4 pointer-events-none" role="alert">
-        URL copied to clipboard!
+    <!-- Toast Notification (for Copy action) - Positioned to the bottom left for RTL -->
+    <div id="toast" class="fixed bottom-5 left-5 z-50 p-4 bg-green-500 text-white rounded-lg shadow-2xl transition-opacity duration-300 opacity-0 transform translate-y-4 pointer-events-none" role="alert">
+        آدرس در کلیپ‌بورد کپی شد!
     </div>
 
 
@@ -98,7 +99,8 @@
 
         // Function to convert project name into a human-readable title
         const formatTitle = (name) => {
-            if (name === 'paymon1.github.io') return 'Root Homepage';
+            if (name === 'paymon1.github.io') return 'صفحه اصلی (Root)';
+            // Standard title formatting (English, as repo names are typically Latin)
             return name
                 .split('-')
                 .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -126,6 +128,7 @@
                 // Create the button card element
                 const card = document.createElement('div');
                 card.id = `link-${name}`;
+                // Note: No text-right needed here, as the card title is white on a dark bar.
                 card.className = 'link-button bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 flex flex-col justify-between';
                 card.setAttribute('data-search-term', `${name} ${title}`.toLowerCase());
 
@@ -134,23 +137,24 @@
 
                 card.innerHTML = `
                     <div class="p-4 bg-gradient-to-r ${headerColor} to-gray-800 dark:to-gray-900">
-                        <h2 class="text-xl font-bold text-white truncate">${title}</h2>
+                        <h2 class="text-xl font-bold text-white truncate text-left">${title}</h2>
                     </div>
                     <div class="p-4 flex-grow">
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 break-all">
-                            <span class="font-medium text-gray-800 dark:text-gray-200">URL:</span> ${url}
+                        <!-- UPDATED: Added text-right for alignment and reversed the order of URL and label -->
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 break-all text-right" dir="ltr">
+                            ${url} <span class="font-medium text-gray-800 dark:text-gray-200" dir="rtl">آدرس:</span>
                         </p>
                     </div>
-                    <div class="p-4 border-t border-gray-200 dark:border-gray-700 flex justify-between space-x-3">
+                    <div class="p-4 border-t border-gray-200 dark:border-gray-700 flex justify-between space-x-3 rtl:space-x-reverse">
                         <!-- Primary Navigation Button -->
                         <a href="${url}" target="_blank" rel="noopener noreferrer"
                            class="flex-1 text-center py-2 px-4 rounded-lg font-semibold bg-indigo-500 text-white hover:bg-indigo-600 transition duration-150 transform hover:scale-[1.02] shadow-md">
-                            Go to Page
+                            برو به صفحه
                         </a>
                         <!-- Copy Tool Button -->
                         <button onclick="copyLink('${url}')"
                                 class="flex-shrink-0 p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-150"
-                                title="Copy URL">
+                                title="کپی آدرس">
                             <!-- Copy Icon (Lucide Icon - Clipboard) -->
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2v-2M8 5v2a2 2 0 002 2h4a2 2 0 002-2V5M8 5h8"></path></svg>
                         </button>
@@ -196,6 +200,9 @@
 
             // Show Toast Notification
             const toast = document.getElementById('toast');
+            // Update toast message to Persian
+            toast.textContent = 'آدرس در کلیپ‌بورد کپی شد!';
+            
             toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
             toast.classList.add('opacity-100', 'translate-y-0');
 
@@ -219,13 +226,13 @@
                 html.classList.remove('dark');
                 localStorage.setItem('theme', 'light');
                 themeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>`; // Sun icon
-                themeText.textContent = 'Toggle Dark Mode';
+                themeText.textContent = 'فعال/غیرفعال‌سازی حالت تاریک';
             } else {
                 // Switch to dark mode
                 html.classList.add('dark');
                 localStorage.setItem('theme', 'dark');
                 themeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>`; // Moon icon
-                themeText.textContent = 'Toggle Light Mode';
+                themeText.textContent = 'فعال/غیرفعال‌سازی حالت روشن';
             }
         };
 
