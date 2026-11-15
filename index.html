@@ -1,262 +1,31 @@
-<!DOCTYPE html>
-<html lang="fa">
+<!doctype html>
+<html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مرکز پروژه‌های پیمان </title>
-    <!-- Load Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configure Tailwind for Inter font and basic styling -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-        /* Note: For Farsi/Persian text, the browser will likely fall back to a suitable RTL font like Noto Sans Arabic or system UI font. */
-        body {
-            font-family: 'Inter', sans-serif;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        /* Custom scrollbar for aesthetics */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background-color: #4f46e5;
-            border-radius: 4px;
-        }
-        .link-button {
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .link-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.5), 0 4px 6px -2px rgba(79, 70, 229, 0.2);
-        }
-    </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1020"><meta name="description" content="مرکز پروژه‌ها و ابزارهای Paymon">
+<title>Paymon — مرکز پروژه‌ها</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#0b1020;--panel:#11182b;--card:#141d32;--line:#26314b;--text:#edf2ff;--muted:#9ba9c5;--accent:#8b9cff;--glow:#7c5cff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0,#1c2450 0,transparent 42%),var(--bg);color:var(--text);font-family:Vazirmatn,system-ui,sans-serif;min-height:100vh}
+.wrap{max-width:1120px;margin:auto;padding:36px 22px 60px}.top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:64px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px}.mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#a7b5ff,#7155f5);display:grid;place-items:center;color:#080d1c;font-size:22px;box-shadow:0 8px 30px #7155f544}.top a{color:var(--muted);text-decoration:none;border:1px solid var(--line);padding:9px 15px;border-radius:12px;font-size:13px}.hero{text-align:center;margin-bottom:42px}.eyebrow{color:#a9b4ff;font-size:13px;letter-spacing:.04em}.hero h1{font-size:clamp(32px,6vw,58px);line-height:1.25;margin:14px 0 16px;font-weight:800;letter-spacing:-1.5px}.hero h1 span{background:linear-gradient(90deg,#b7c4ff,#8b77ff);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);margin:0 auto;max-width:540px;line-height:2;font-size:15px}.tools{display:flex;gap:12px;max-width:650px;margin:30px auto 0}.search{flex:1;position:relative}.search input{width:100%;background:#11182bd9;border:1px solid var(--line);border-radius:15px;padding:15px 48px 15px 16px;color:var(--text);font:inherit;outline:none}.search input:focus{border-color:#7d8cff;box-shadow:0 0 0 3px #7d8cff20}.search:before{content:"⌕";position:absolute;right:17px;top:8px;font-size:25px;color:var(--muted)}.count{align-self:center;color:var(--muted);font-size:13px;white-space:nowrap}.section-head{display:flex;align-items:center;justify-content:space-between;margin:28px 0 16px}.section-head h2{font-size:17px;margin:0}.section-head span{font-size:12px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{background:linear-gradient(145deg,#151e34,#101729);border:1px solid var(--line);border-radius:18px;padding:20px;min-height:160px;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:.2s;position:relative;overflow:hidden}.card:hover{transform:translateY(-4px);border-color:#6676d8;box-shadow:0 14px 40px #0003}.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px}.repo-icon{width:36px;height:36px;border-radius:11px;background:#222d49;color:#aebaff;display:grid;place-items:center;font-size:16px}.arrow{color:#71809e;font-size:18px}.card h3{font-size:15px;margin:0 0 8px;direction:ltr;text-align:right;overflow-wrap:anywhere}.card p{font-size:12px;color:var(--muted);line-height:1.8;margin:0;flex:1}.meta{display:flex;gap:8px;align-items:center;margin-top:15px;font-size:11px;color:#8998b6}.dot{width:6px;height:6px;border-radius:50%;background:#7b8cff}.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:50px}.footer{border-top:1px solid var(--line);margin-top:55px;padding-top:22px;display:flex;justify-content:space-between;color:#75829d;font-size:12px}.footer a{color:#aab6ff;text-decoration:none}.loading{color:var(--muted);text-align:center;padding:45px;grid-column:1/-1}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.top{margin-bottom:45px}}
+@media(max-width:540px){.wrap{padding:22px 15px 40px}.grid{grid-template-columns:1fr}.hero{margin-bottom:30px}.tools{flex-direction:column}.count{text-align:center}.footer{gap:12px;flex-direction:column;text-align:center}.card{min-height:145px}}
+</style>
 </head>
-
-<body dir="rtl" class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
-
-    <!-- Main Container -->
-    <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
-
-        <!-- Header -->
-        <header class="text-center mb-12 pt-8">
-            <h1 class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600 dark:from-indigo-400 dark:to-purple-500 mb-2">
-                فهرست صفحات تک‌صفحه‌ای پروژه‌ها
-            </h1>
-            <p class="text-xl text-gray-600 dark:text-gray-400">
-                دسترسی سریع به تمام میکرو-اپلیکیشن‌های GitHub Pages من.
-            </p>
-        </header>
-
-        <!-- Tools & Interactivity Section -->
-        <div class="flex flex-col md:flex-row justify-between items-center mb-8 space-y-4 md:space-y-0">
-            <!-- Search/Filter Tool -->
-            <div class="w-full md:w-1/2">
-                <label for="search" class="sr-only">جستجوی پروژه‌ها</label>
-                <input type="text" id="search" oninput="filterLinks()" placeholder="جستجوی پروژه‌ها (مثلاً: 'management', 'links')"
-                       class="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-xl shadow-lg focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-gray-100 transition duration-300">
-            </div>
-
-            <!-- Theme Toggle Tool -->
-            <button id="theme-toggle" onclick="toggleTheme()"
-                    class="flex items-center space-x-2 rtl:space-x-reverse p-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 border border-gray-200 dark:border-gray-700">
-                <!-- Icon will be updated by JS -->
-                <svg id="theme-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                <span id="theme-text" class="hidden sm:inline">فعال/غیرفعال‌سازی حالت تاریک</span>
-            </button>
-        </div>
-
-        <!-- Links Grid Container -->
-        <div id="links-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            <!-- Buttons will be dynamically inserted here -->
-        </div>
-
-        <!-- No Results Message -->
-        <p id="no-results" class="text-center text-xl text-red-500 dark:text-red-400 mt-10 hidden">
-            پروژه‌ای با عبارت جستجوی شما یافت نشد.
-        </p>
-
-    </div>
-
-    <!-- Toast Notification (for Copy action) - Positioned to the bottom left for RTL -->
-    <div id="toast" class="fixed bottom-5 left-5 z-50 p-4 bg-green-500 text-white rounded-lg shadow-2xl transition-opacity duration-300 opacity-0 transform translate-y-4 pointer-events-none" role="alert">
-        آدرس در کلیپ‌بورد کپی شد!
-    </div>
-
-
-    <script>
-        // --- Configuration & Initialization ---
-
-        const BASE_URL = 'https://paymon1.github.io/';
-        // The list of project/repo names provided by the user
-        const projectNames = [
-            'links', 'longform', 'portfolio', 'hub', '283000', 'coinpayu',
-            'fund-management', 'management', 'paymon1.github.io', 'trends',
-            'charisma', 'turquoise', 'tabdeal', 'wallex', 'easyhits',
-            'dongi', 'mitra', 'tools'
-        ];
-        const linksGrid = document.getElementById('links-grid');
-        const noResults = document.getElementById('no-results');
-
-        // Function to convert project name into a human-readable title
-        const formatTitle = (name) => {
-            if (name === 'paymon1.github.io') return 'صفحه اصلی (Root)';
-            // Standard title formatting (English, as repo names are typically Latin)
-            return name
-                .split('-')
-                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                .join(' ');
-        };
-
-        // --- Core Functions ---
-
-        /**
-         * Renders the grid of interactive project buttons.
-         * @param {string[]} names - Array of project names to render.
-         */
-        const renderLinks = (names) => {
-            linksGrid.innerHTML = '';
-            if (names.length === 0) {
-                noResults.classList.remove('hidden');
-                return;
-            }
-            noResults.classList.add('hidden');
-
-            names.forEach(name => {
-                const url = BASE_URL + name + '/';
-                const title = formatTitle(name);
-
-                // Create the button card element
-                const card = document.createElement('div');
-                card.id = `link-${name}`;
-                // Note: No text-right needed here, as the card title is white on a dark bar.
-                card.className = 'link-button bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700 flex flex-col justify-between';
-                card.setAttribute('data-search-term', `${name} ${title}`.toLowerCase());
-
-                // Use a gradient for a stylish header bar
-                const headerColor = ['from-purple-500', 'from-indigo-500', 'from-blue-500', 'from-teal-500'][Math.floor(Math.random() * 4)];
-
-                card.innerHTML = `
-                    <div class="p-4 bg-gradient-to-r ${headerColor} to-gray-800 dark:to-gray-900">
-                        <h2 class="text-xl font-bold text-white truncate text-left">${title}</h2>
-                    </div>
-                    <div class="p-4 flex-grow">
-                        <!-- UPDATED: Added text-right for alignment and reversed the order of URL and label -->
-                        <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 break-all text-right" dir="ltr">
-                            ${url} <span class="font-medium text-gray-800 dark:text-gray-200" dir="rtl">آدرس:</span>
-                        </p>
-                    </div>
-                    <div class="p-4 border-t border-gray-200 dark:border-gray-700 flex justify-between space-x-3 rtl:space-x-reverse">
-                        <!-- Primary Navigation Button -->
-                        <a href="${url}" target="_blank" rel="noopener noreferrer"
-                           class="flex-1 text-center py-2 px-4 rounded-lg font-semibold bg-indigo-500 text-white hover:bg-indigo-600 transition duration-150 transform hover:scale-[1.02] shadow-md">
-                            برو به صفحه
-                        </a>
-                        <!-- Copy Tool Button -->
-                        <button onclick="copyLink('${url}')"
-                                class="flex-shrink-0 p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition duration-150"
-                                title="کپی آدرس">
-                            <!-- Copy Icon (Lucide Icon - Clipboard) -->
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2v-2M8 5v2a2 2 0 002 2h4a2 2 0 002-2V5M8 5h8"></path></svg>
-                        </button>
-                    </div>
-                `;
-
-                linksGrid.appendChild(card);
-            });
-        };
-
-        /**
-         * Filters the rendered links based on the search input.
-         */
-        const filterLinks = () => {
-            const searchTerm = document.getElementById('search').value.toLowerCase().trim();
-            const allCards = linksGrid.querySelectorAll('.link-button');
-            let visibleCount = 0;
-
-            allCards.forEach(card => {
-                const text = card.getAttribute('data-search-term');
-                const isVisible = text.includes(searchTerm);
-                card.classList.toggle('hidden', !isVisible);
-                if (isVisible) {
-                    visibleCount++;
-                }
-            });
-
-            noResults.classList.toggle('hidden', visibleCount > 0);
-        };
-
-        /**
-         * Copies the given URL to the clipboard and shows a toast notification.
-         * @param {string} url - The URL to copy.
-         */
-        const copyLink = (url) => {
-            // Use execCommand for broader compatibility in sandboxed environments
-            const tempInput = document.createElement('textarea');
-            tempInput.value = url;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-
-            // Show Toast Notification
-            const toast = document.getElementById('toast');
-            // Update toast message to Persian
-            toast.textContent = 'آدرس در کلیپ‌بورد کپی شد!';
-            
-            toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
-            toast.classList.add('opacity-100', 'translate-y-0');
-
-            // Hide Toast after 3 seconds
-            setTimeout(() => {
-                toast.classList.remove('opacity-100', 'translate-y-0');
-                toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
-            }, 3000);
-        };
-
-        /**
-         * Toggles between light and dark themes.
-         */
-        const toggleTheme = () => {
-            const html = document.documentElement;
-            const themeIcon = document.getElementById('theme-icon');
-            const themeText = document.getElementById('theme-text');
-
-            if (html.classList.contains('dark')) {
-                // Switch to light mode
-                html.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-                themeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>`; // Sun icon
-                themeText.textContent = 'فعال/غیرفعال‌سازی حالت تاریک';
-            } else {
-                // Switch to dark mode
-                html.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-                themeIcon.innerHTML = `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>`; // Moon icon
-                themeText.textContent = 'فعال/غیرفعال‌سازی حالت روشن';
-            }
-        };
-
-        /**
-         * Initializes the application: sets the theme and renders the links.
-         */
-        const initApp = () => {
-            // 1. Set initial theme from localStorage or system preference
-            const storedTheme = localStorage.getItem('theme');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const isDark = storedTheme === 'dark' || (!storedTheme && prefersDark);
-
-            if (isDark) {
-                document.documentElement.classList.add('dark');
-            }
-            // Update the toggle button's state visually after setting the initial class
-            toggleTheme(); // Calling it once here sets the correct icon/text based on the current class.
-
-            // 2. Render all the links
-            renderLinks(projectNames);
-        };
-
-        // Start the application on window load
-        window.onload = initApp;
-    </script>
-</body>
-</html>
+<body><main class="wrap">
+<header class="top"><div class="brand"><div class="mark">P</div><span>PAYMON<span style="color:#8997ff">.</span></span></div><a href="https://github.com/paymon1" target="_blank" rel="noopener">گیت‌هاب ↗</a></header>
+<section class="hero"><div class="eyebrow">یک نقطه برای همه چیز</div><h1>پروژه‌ها، در <span>یک نگاه.</span></h1><p>مرکز دسترسی به پروژه‌ها، ابزارها و تجربه‌های من.<br>جستجو کن و مستقیم وارد هر پروژه شو.</p>
+<div class="tools"><div class="search"><input id="search" type="search" placeholder="جستجوی پروژه..." autocomplete="off" aria-label="جستجوی پروژه"></div><div class="count" id="count">در حال بارگذاری…</div></div></section>
+<div class="section-head"><h2>همه پروژه‌ها</h2><span>به‌روز از GitHub</span></div>
+<section class="grid" id="projects"><div class="loading">در حال دریافت پروژه‌ها…</div></section>
+<footer class="footer"><span>ساخته‌شده با دقت و کنجکاوی ✦</span><a href="https://github.com/paymon1" target="_blank" rel="noopener">github.com/paymon1 ↗</a></footer>
+</main>
+<script>
+const grid=document.getElementById('projects'),search=document.getElementById('search'),count=document.getElementById('count');let repos=[];
+const fallback=['links','longform','portfolio','hub','283000','coinpayu','fund-management','management','paymon1.github.io','trends','charisma','turquoise','tabdeal','wallex','easyhits','dongi','mitra','tools'].map(name=>({name,html_url:'https://paymon1.github.io/'+name,description:'پروژه و ابزار آنلاین',homepage:'',fork:false}));
+function render(){const q=search.value.trim().toLowerCase();const list=repos.filter(r=>(r.name+' '+(r.description||'')).toLowerCase().includes(q));count.textContent=list.length+' پروژه';grid.innerHTML=list.length?list.map(r=>'<a class="card" href="'+r.url+'" target="_blank" rel="noopener"><div class="card-top"><div class="repo-icon">⌘</div><span class="arrow">↗</span></div><h3>'+esc(r.name)+'</h3><p>'+esc(r.description||'پروژه در گیت‌هاب')+'</p><div class="meta"><span class="dot"></span>'+ (r.live?'وب‌سایت فعال':'مخزن GitHub')+'</div></a>').join(''):'<div class="empty">پروژه‌ای با این عبارت پیدا نشد.</div>'}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+search.addEventListener('input',render);
+fetch('https://api.github.com/users/paymon1/repos?per_page=100&sort=updated').then(r=>{if(!r.ok)throw Error();return r.json()}).then(data=>{repos=data.filter(r=>!r.fork).map(r=>({name:r.name,description:r.description,url:r.homepage||r.html_url,live:!!r.homepage}));repos.sort((a,b)=>a.name.localeCompare(b.name));render()}).catch(()=>{repos=fallback.map(r=>({name:r.name,description:r.description,url:r.html_url,live:true}));render()});
+</script></body></html>
